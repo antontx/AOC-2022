@@ -1,6 +1,5 @@
-from typing import *
 from itertools import groupby
-from typing import List
+
 
 
 def main():
