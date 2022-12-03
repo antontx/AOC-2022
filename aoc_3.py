@@ -14,9 +14,9 @@ def main():
                 temp.add(char)
         chars.extend(temp)
 
-    sum = 0
+    sum_ = 0
     for char in chars:
-        sum += priority(char)
+        sum_ += priority(char)
 
     # part 2
     chars.clear()
@@ -29,11 +29,11 @@ def main():
         chars.extend(temp)
 
     print(chars)
-    sum = 0
+    sum_ = 0
     for char in chars:
-        sum += priority(char)
+        sum_ += priority(char)
 
-    print(sum)
+    print(sum_)
 
 
 def get_input_from_file(path: str) -> list:

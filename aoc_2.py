@@ -1,5 +1,4 @@
 def get_input_from_file(path: str) -> list:
-    source = []
     with open(path, "r") as file:
         source = [line.rstrip() for line in file]
 
