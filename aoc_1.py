@@ -2,7 +2,7 @@ from itertools import groupby
 
 
 def main():
-    src = get_input_from_file("files/AOC_1/input.txt")
+    src = get_input_from_file("files/AOC_1/test.txt")
     src = [list(group) for key, group in groupby(src, lambda x: x == "") if not key]
     sums = []
 
