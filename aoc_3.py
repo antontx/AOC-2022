@@ -3,9 +3,9 @@ def main():
     bags = []
     chars = []
     for pair in src:
-        bags.append([pair[:len(pair)//2],pair[len(pair)//2:]])
+        bags.append([pair[:len(pair) // 2], pair[len(pair) // 2:]])
 
-    #part 1
+    # part 1
     temp = set()
     for pair in bags:
         temp.clear()
@@ -18,7 +18,7 @@ def main():
     for char in chars:
         sum += priority(char)
 
-    #part 2
+    # part 2
     chars.clear()
     groups = [list(bag) for bag in zip(*[src[i::3] for i in range(3)])]
     for bag in groups:
@@ -33,8 +33,6 @@ def main():
     for char in chars:
         sum += priority(char)
 
-
-
     print(sum)
 
 
@@ -45,6 +43,7 @@ def get_input_from_file(path: str) -> list:
 
     file.close()
     return source
+
 
 def priority(char: str) -> int:
     if char.islower():
