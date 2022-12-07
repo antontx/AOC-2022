@@ -41,7 +41,7 @@ def main():
         if words[0] == "$":
             if words[1] == "cd":
                 if words[2] == "..":
-                    path.pop();
+                    path.pop()
                 else:
                     path.append(words[2])
         else:
