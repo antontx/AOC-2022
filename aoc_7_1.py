@@ -1,8 +1,9 @@
 import json
+from collections import defaultdict
 
 globalSize = 0
 
-def f_size(dic: dict) -> int:
+def f_size(dic: defaultdict) -> int:
     global globalSize
     s = 0
     for k,v in dic.items():
@@ -16,7 +17,7 @@ def f_size(dic: dict) -> int:
 
     return s
 
-def getCd(cd: dict, p: list):
+def getCd(cd: defaultdict, p: list):
 
     pc = p.copy()
     pc.pop()
@@ -29,9 +30,9 @@ def getCd(cd: dict, p: list):
 
 def main():
     src = get_input_from_file("files/AOC_1/test.txt")
-    lines = []
-    main = {}
+    main = defaultdict(dict)
     path = []
+    lines = []
 
 
     for word in src:
@@ -45,21 +46,12 @@ def main():
                 else:
                     path.append(words[2])
         else:
-
             cd = getCd(main,path)
 
-
-            if path[-1] in cd:
-                if words[0] == "dir":
-                    cd[path[-1]][words[1]] = {}
-                else:
-                    cd[path[-1]][words[1]] = words[0]
+            if words[0] == "dir":
+                cd[path[-1]][words[1]] = defaultdict(dict)
             else:
-                cd[path[-1]] = {}
-                if words[0] == "dir":
-                    cd[path[-1]][words[1]] = {}
-                else:
-                    cd[path[-1]][words[1]] = words[0]
+                cd[path[-1]][words[1]] = words[0]
 
     print(json.dumps(main, indent=4))
     f_size(main)
