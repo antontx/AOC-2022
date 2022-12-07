@@ -73,11 +73,16 @@ def main():
     #         sizeSum += value
 
     # pprint.pprint(globalSize,width=1)
+
     print(globalSize)
 
 
     print(f"totalsize = {f_size(main)}")
     # print(f"sum <= 100000: {sizeSum}")
+
+    # part 2
+    # 70000000 - 1555642 = 68444358
+
 
 
 
