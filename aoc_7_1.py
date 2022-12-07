@@ -1,4 +1,3 @@
-import pprint
 import json
 
 globalSize = 0
@@ -62,26 +61,11 @@ def main():
                 else:
                     cd[path[-1]][words[1]] = words[0]
 
-    # pprint.pprint(main,width=1, indent=2)
     print(json.dumps(main, indent=4))
     f_size(main)
 
-
-    # sizeSum = 0
-    # for value in globalSize.values():
-    #     if value <= 100000:
-    #         sizeSum += value
-
-    # pprint.pprint(globalSize,width=1)
-
     print(globalSize)
 
-
-    print(f"totalsize = {f_size(main)}")
-    # print(f"sum <= 100000: {sizeSum}")
-
-    # part 2
-    # 70000000 - 1555642 = 68444358
 
 
 
