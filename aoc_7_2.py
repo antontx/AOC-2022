@@ -18,10 +18,9 @@ def f_size(dic: dict) -> int:
 
 
 def getCd(cd: dict, p: list):
-    pc = p.copy()
-    pc.pop()
+
     if len(p) > 1:
-        for key in pc:
+        for key in p[:-1]:
             cd = cd[key]
 
     return cd
