@@ -1,16 +1,19 @@
 import pprint
 import json
 
-globalSize = {}
+globalSize = 0
 
 def f_size(dic: dict) -> int:
+    global globalSize
     s = 0
     for k,v in dic.items():
         if isinstance(v,str):
             s += int(v)
         else:
             s += f_size(v)
-            globalSize[k] = f_size(v)
+
+    if s <= 100000:
+        globalSize += s
 
     return s
 
@@ -64,15 +67,17 @@ def main():
     f_size(main)
 
 
-    sizeSum = 0
-    for value in globalSize.values():
-        if value <= 100000:
-            sizeSum += value
+    # sizeSum = 0
+    # for value in globalSize.values():
+    #     if value <= 100000:
+    #         sizeSum += value
 
-    pprint.pprint(globalSize,width=1)
+    # pprint.pprint(globalSize,width=1)
+    print(globalSize)
+
 
     print(f"totalsize = {f_size(main)}")
-    print(f"sum <= 100000: {sizeSum}")
+    # print(f"sum <= 100000: {sizeSum}")
 
 
 
