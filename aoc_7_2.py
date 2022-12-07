@@ -62,6 +62,7 @@ def main():
 
     f_size(main)
 
+    # 30000000 - (70000000 - 45349983) = 5349983
     globalSize.append(5349983)
     globalSize.sort()
     print(globalSize[globalSize.index(5349983)+1])
