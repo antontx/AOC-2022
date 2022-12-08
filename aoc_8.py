@@ -22,7 +22,7 @@ def main():
         for i,tree in enumerate(row):
             visible = False
             #left
-            if (i == 0 or (tree > max(row[:i]) and tree > row[0])) and visible is False:
+            if (i == 0 or (tree > max(row[:i]))) and visible is False:
                 if not i == 0:
                     print(f"{tree}({i})({visible}) left {tree} > {max(row[:i])}: {row[:i]} - {seen=}")
                 else:
@@ -31,7 +31,7 @@ def main():
                 visible = True
 
             #right
-            elif (i == len(row)-1 or (tree > max(row[i+1:]) and tree > row[len(row)-1]))and visible is False:
+            elif (i == len(row)-1 or (tree > max(row[i+1:]))) and visible is False:
                 if not i == len(row)-1:
                     print(f"{tree}({i})({visible}) right {tree} > {max(row[i+1:])}: {row[i+1:]} - {seen=}")
                 else:
@@ -40,13 +40,13 @@ def main():
                 visible = True
 
 
-            row = t_mapTD[i]
-            tree = row[r]
+            row2 = t_mapTD[i]
+            tree = row2[r]
 
             # top
-            if (r == 0 or (tree > max(row[:r]) and tree > row[0])) and visible is False:
+            if (r == 0 or (tree > max(row2[:r]))) and visible is False:
                 if not r == 0:
-                    print(f"{tree}({i})({visible}) top {tree} > {max(row[:r])}: {row[:r]} - {seen=}")
+                    print(f"{tree}({i})({visible}) top {tree} > {max(row2[:r])}: {row2[:r]} - {seen=}")
                 else:
                     print(f"{tree}({i})({visible}) top (start) - {seen=}")
                 seen += 1
@@ -54,9 +54,9 @@ def main():
                 visible = True
 
             # down
-            elif (r == len(row) - 1 or (tree > max(row[r + 1:]) and tree > row[len(row) - 1])) and visible is False:
-                if not r == len(row) - 1:
-                    print(f"{tree}({r})({visible}) down {tree} > {max(row[r + 1:])}: {row[r + 1:]} - {seen=}")
+            elif (r == len(row2) - 1 or (tree > max(row2[r + 1:]))) and visible is False:
+                if not r == len(row2) - 1:
+                    print(f"{tree}({r})({visible}) down {tree} > {max(row2[r + 1:])}: {row2[r + 1:]} - {seen=}")
                 else:
                     print(f"{tree}({i})({visible}) down (start) - {seen=}")
                 seen += 1
