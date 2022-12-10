@@ -20,8 +20,11 @@ def main():
     cycles = [20,60,100,140,180,220]
     count = 0
 
+    register.pop(0)
+
     for c in cycles:
-        count += (register[c-1] * c)
+        print(register[c])
+        count += (register[c] * c)
 
     print(count)
 
